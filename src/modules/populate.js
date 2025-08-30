@@ -17,15 +17,16 @@ const getData = async () => {
 };
 
 export const render = async () => {
-  const likesCount = await retrieveLikes(); // likesCount craeted
-  // if(likesCount) {alert('successful');}
-  const data = await getData();
-  const topThree = data
-    .sort((a, b) => b.rating.average - a.rating.average)
-    .slice(0, 6);
-  alert(`alertcount${likesCount}`);
+  
 
   const tvShowsDiv = document.getElementById('movies');
+
+ const data = await getData();
+const topThree = data
+  .sort((a, b) => b.rating.average - a.rating.average)
+ .slice(0, 6);
+
+
 
   for (let x = 0; x < topThree.length; x += 1) {
     const poster = topThree[x].image.medium;
@@ -39,8 +40,8 @@ export const render = async () => {
     // comparing to find the matching ids
 
     //  ---------  PROBLEM ------------------//
-    // const serieLike = likesCount.find((obj) => obj.item_id === `${id}`);
-    // const count = !serieLike ? 0 : serieLike.likesCount;
+   // const serieLike = likesCount.find((obj) => obj.item_id === `${id}`);
+    //const count = !serieLike ? 0 : serieLike.likes;
 
     // alert(`value of count${count.likes}`);
 
@@ -51,6 +52,10 @@ export const render = async () => {
     posterImg.src = poster;
     // const icons = document.createElement('span');
 
+    //const likesCount = await retrieveLikes(); // likesCount craeted
+  // if(likesCount) {alert('successful');}
+ 
+
     // a container containing title
     const titleContainer = document.createElement('div');
     const showName = document.createElement('h2');
@@ -58,7 +63,7 @@ export const render = async () => {
     likes.classList.add('fa-solid', 'fa-heart', 'likeBtn');
 
     const spanLikes = document.createElement('span');
-    spanLikes.classList.add('likesCount'); // in place of items-count
+    //spanLikes.classList.add('likesCount'); // in place of items-count
     spanLikes.textContent = 'likes :'; // edit this value and fetch for this value
     showName.textContent = title;
 

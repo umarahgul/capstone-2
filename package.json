@@ -542,6 +542,7 @@
     "tar": "^6.1.15",
     "tar-fs": "^2.1.1",
     "tar-stream": "^2.2.0",
+    "text-encoding": "^0.7.0",
     "text-table": "^0.2.0",
     "through": "^2.3.8",
     "to-fast-properties": "^2.0.0",
